@@ -3,21 +3,136 @@
   <head>
     <meta charset="utf-8">
     <title>Hammingo kodai</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+    body {
+      background-color: #e3decc;
+      font-family: 'Roboto', sans-serif;
+      position: relative;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    div {
+      display: block;
+    }
+
+    .header {
+      padding: 20px;
+      margin: auto;
+      clear: both;
+    }
+
+    canvas {
+      padding: 20px;
+      margin: auto;
+      clear: both;
+      background-color: white;
+    }
+
+    .select {
+      padding: 5px;
+      margin: auto;
+      clear: both;
+      margin-right: 82px;
+    }
+
+    .input {
+      padding: 5px;
+      margin: auto;
+      clear: both;
+    }
+
+    #output {
+      padding: 5px;
+      margin: auto;
+      clear: both;
+    }
+
+    input {
+      width: 176px;
+      font-size: 15px;
+      padding: 5px 5px;
+      border: 2px solid;
+      border-radius: 4px;
+      background-color: #fff;
+      margin-right: 5px;
+    }
+
+    input:hover {
+      background-color: #fff;
+      outline-color: transparent;
+      outline-style: solid;
+      border-color: #dbdbdb;
+      box-shadow: 0 0 0 2px #000;
+      transition: 0.3s;
+  }
+
+    button {
+      font-size: 15px;
+      padding: 5px 5px;
+      border: 2px solid;
+      border-radius: 4px;
+      background-color: #fff;
+      cursor: pointer;
+      width: 80px
+    }
+
+    #go {
+      margin: 0px 25px 0px 0px;
+    }
+
+    button:hover {
+      background-color: #fff;
+      outline-color: transparent;
+      outline-style: solid;
+      border-color: #dbdbdb;
+      box-shadow: 0 0 0 2px #000;
+      transition: 0.3s;
+  }
+
+    select {
+      font-size: 15px;
+      padding: 5px 5px;
+      border: 2px solid;
+      border-radius: 4px;
+      background-color: #fff;
+      cursor: pointer;
+      margin-left: 5px;
+    }
+
+    select:hover {
+      background-color: #fff;
+      outline-color: transparent;
+      outline-style: solid;
+      border-color: #dbdbdb;
+      box-shadow: 0 0 0 2px #000;
+      transition: 0.3s;
+  }
+
+
+    </style>
   </head>
   <body>
-    <h2>Hammingo kodų (7, 4) kalkuliatorius</h2>
-    <canvas id="myCanvas" width="344" height="324" style="border: 2px solid; border-color: black; border-radius: 15px;"></canvas>
-    <div>
+    <div class="header">
+      <h2>Hammingo kodų (7, 4) kalkuliatorius</h2>
+    </div>
+    <div class="canvas">
+      <canvas id="myCanvas" width="344" height="324" style="border: 2px solid; border-color: black; border-radius: 15px;"></canvas>
+    </div>
+    <div class="select">
       <label for="code">Pasirinkite ką norite daryti:</label>
       <select id="code" name="code">
         <option value="encode">Užkoduoti</option>
         <option value="decode">Dekoduoti</option>
       </select>
     </div>
-    <div>
+    <div class="input">
       <input id="input" autocomplete="off" type="text" name="input" value="" maxlength="4">
-      <button type="button" onclick="selectFunction(ctx)">Count</button>
-      <button type="button" id="reset" value="Reset">Reset</button>
+      <button type="button" id="go" onclick="selectFunction(ctx)">Pirmyn</button>
+      <button type="button" id="reset" value="Reset">Atnaujinti</button>
       <script>
         var c = document.getElementById("myCanvas");
         var ctx = c.getContext("2d");
@@ -192,6 +307,5 @@
     </div>
     <div id="output">
     </div>
-
   </body>
 </html>
